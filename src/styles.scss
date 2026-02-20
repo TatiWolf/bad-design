@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'normalize.css/normalize.css';
+
+html {
+  background: #E4E4E4;
+  font-family: "JetBrains Mono", serif;
+
+}
+
+
+.section {
+  position: relative;
+  max-width: 1440px;
+  margin: 0 55px;
+}
+
+.container {
+
+}
