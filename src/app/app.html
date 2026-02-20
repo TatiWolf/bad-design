@@ -1,14 +1,13 @@
-<app-header/>
-<div style="display: grid;
-grid-template-columns: repeat(12, 1fr);
-grid-template-rows: repeat(5, 1fr);
-grid-column-gap: 0;
-grid-row-gap: 0;">
-  <div style="grid-area: 1 / 1 / 2 / 11;">
-    <router-outlet/>
+<div class="main">
+  <div class="main__header">
+    <app-header/>
+
+    <div class="main__header__router">
+      <router-outlet/>
+    </div>
 
   </div>
-  <div style=" grid-area: 1 / 11 / 2 / 13;">
+  <div class="main__side-bar">
 
     <app-side-bar/>
   </div>

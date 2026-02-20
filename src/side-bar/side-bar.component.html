@@ -1,0 +1,9 @@
+<div class="side-bar_wrap">
+  @for (element of catalog; track element.id) {
+    <a
+      [routerLink]="element.link"
+      routerLinkActive="link__active"
+      class="side-bar_wrap-element"
+    >{{ element.name }}</a>
+  }
+</div>

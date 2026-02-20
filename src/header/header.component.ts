@@ -1,11 +1,17 @@
 import { Component } from '@angular/core';
+import {NgOptimizedImage} from '@angular/common';
+import {RouterLink, RouterLinkActive} from '@angular/router';
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [
+    NgOptimizedImage,
+    RouterLinkActive,
+    RouterLink
+  ],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css',
+  styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-
+  logo: string = '/logos/badlogo-header.svg';
 }

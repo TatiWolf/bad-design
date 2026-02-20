@@ -1,18 +1,55 @@
-@import 'normalize.css/normalize.css';
+@use "font";
+@use 'normalize.css/normalize.css';
+
+* {
+  &::-webkit-scrollbar-thumb {
+
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+    background-color: transparent;
+  }
+}
 
 html {
   background: #E4E4E4;
   font-family: "JetBrains Mono", serif;
-
 }
-
 
 .section {
   position: relative;
   max-width: 1440px;
-  margin: 0 55px;
 }
 
 .container {
+  margin: 0 55px;
+}
 
+.header-link {
+  color: #000;
+  font-family: "Aeonik Pro", serif;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+  padding: 0 5px;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    background: #B6FF51;
+  }
+
+  &:active {
+    background: #83E100;
+  }
+}
+
+.link__active {
+  background: #83E100;
 }

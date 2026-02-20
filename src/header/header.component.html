@@ -1,5 +1,25 @@
 <section class="section-header">
   <div class="container header-container">
-    <img src="" alt="">
+    <a routerLink="/">
+      <img
+        [ngSrc]="logo"
+        alt=""
+        width="129"
+        height="43"
+        priority
+      >
+    </a>
+    <div class="header-links">
+      <a
+        routerLinkActive="link__active"
+        routerLink="/about"
+        class="header-link"
+      >о проекте</a>
+      <a
+        href="/"
+        class="header-link"
+      >исследования</a>
+    </div>
+
   </div>
 </section>
