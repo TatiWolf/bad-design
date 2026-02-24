@@ -1,0 +1,10 @@
+<div class="side-bar_wrap">
+  @for (catalog of catalogs(); track catalog.id) {
+    <a
+      [routerLink]="catalog.slug"
+      routerLinkActive="link__active"
+      class="side-bar_wrap-element"
+    >
+      <span>{{ catalog.title }} ({{catalog.titleAnotherLanguage}})</span></a>
+  }
+</div>

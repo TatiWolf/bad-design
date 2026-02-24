@@ -1,0 +1,22 @@
+.main {
+  display: grid;
+  //grid-template-columns: repeat(12, 1fr);
+
+}
+
+.main__header {
+  grid-area: 1 / 1 / 2 / 12;
+  height: 100vh;
+}
+
+.main__side-bar {
+  grid-area: 1 / 12 / 2 / 13;
+}
+
+.main__header__router {
+  height: calc(100% - 220px);
+  overflow: auto;
+  padding:55px;
+  max-width: 1440px;
+  margin: 0 auto;
+}

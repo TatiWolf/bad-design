@@ -1,0 +1,22 @@
+.section-header {
+  border-left: 2px solid #000;
+  /*border-top: 2px solid #000;*/
+  border-bottom: 2px solid #000;
+  background: #E8E8E8;
+  z-index: 0;
+}
+
+.header-container {
+  padding: 30px 55px;
+  display: flex;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.header-links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-left: 70px;
+}

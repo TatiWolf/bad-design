@@ -1,0 +1,34 @@
+<div>
+  @if (selectedPattern(); as pattern) {
+
+    <div class="dark-pattern-list__title-wrap">
+      <div>
+        <h1 class="h1">{{ pattern.title }}</h1>
+        <h1 class="h1">({{ pattern.titleAnotherLanguage }})</h1>
+      </div>
+
+      <div class="dark-pattern-list__description-wrap">
+        @for (description of pattern.descriptions; track description) {
+          <p class="paragraph">{{ description }}</p>
+        }
+      </div>
+
+    </div>
+    <div class="dark-pattern-list__dark-patterns-wrap">
+      @for (darkPatternElement of pattern.darkPatternCatalog; track darkPatternElement.id) {
+        <div [routerLink]="[darkPatternElement.id]" class="dark-pattern-list__dark-pattern">
+          <div class="dark-pattern-list__dark-pattern__title-wrap">
+            <h2 class="h2">{{ darkPatternElement.title }}</h2>
+            <div class="dark-pattern-list__dark-pattern__title-another-language">
+              <p>{{ darkPatternElement.titleAnotherLanguage }}</p>
+            </div>
+          </div>
+          <div class="dark-pattern-list__dark-pattern__description">
+            <p class="paragraph">{{ darkPatternElement.description }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  }
+
+</div>

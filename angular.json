@@ -5,6 +5,11 @@
     "packageManager": "npm"
   },
   "newProjectRoot": "projects",
+  "schematics": {
+    "@schematics/angular:component": {
+      "standalone": true
+    }
+  },
   "projects": {
     "bad-design": {
       "projectType": "application",
@@ -17,15 +22,12 @@
           "changeDetection": "OnPush"
         },
         "@schematics/angular:service": {
-          "type": "service",
           "skipTests": true
         },
         "@schematics/angular:directive": {
-          "type": "directive",
           "skipTests": true
         },
         "@schematics/angular:pipe": {
-          "type": "pipe",
           "skipTests": true
 
         }
