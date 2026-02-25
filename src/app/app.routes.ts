@@ -1,7 +1,9 @@
 import {Routes} from '@angular/router';
 import {MainLayoutComponent} from './shared/layout/main-layout/main-layout.component';
+import {ErrorLayoutComponent} from './shared/layout/error-layout/error-layout.component';
 
 export const routes: Routes = [
+  {path:'error', component: ErrorLayoutComponent},
   {
     path: '',
     component: MainLayoutComponent,
@@ -10,6 +12,7 @@ export const routes: Routes = [
           import('./features/main/main.component')
             .then(m => m.MainComponent)
       },
+
       { path: 'about', loadComponent: () =>
           import('./features/about/about.component')
             .then(m => m.AboutComponent)

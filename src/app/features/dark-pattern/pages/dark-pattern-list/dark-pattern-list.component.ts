@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, computed, inject} from '@angular/core';
-import {ActivatedRoute, RouterLink} from '@angular/router';
+import {ActivatedRoute, Router, RouterLink} from '@angular/router';
 import {toSignal} from '@angular/core/rxjs-interop';
 import {map} from 'rxjs';
 import {isDarkPatternType} from '../models/dark-pattern.type';
@@ -19,6 +19,7 @@ export class DarkPatternListComponent {
   private darkPatternService = inject(DarkPatternService);
 
   private route: ActivatedRoute = inject(ActivatedRoute)
+  private router: Router = inject(Router);
 
 
   readonly type = toSignal(
@@ -38,7 +39,9 @@ export class DarkPatternListComponent {
     const type = this.type();
     const catalogs = this.catalogs();
 
-    if (!type) return null;
+    if (!type) {
+      this.router.navigate(['error'])
+    };
 
     return catalogs.find(c => c.slug === type) ?? null;
   });
