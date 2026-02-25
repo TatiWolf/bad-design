@@ -134,6 +134,7 @@ const catalogDtos: CatalogDto[] = [
 @Injectable({
   providedIn: 'root',
 })
+
 export class CatalogApiService {
   // private http: HttpClient = inject(HttpClient)
   // private config = inject(APP_CONFIG);
