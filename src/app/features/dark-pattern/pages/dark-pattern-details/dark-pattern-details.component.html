@@ -1,0 +1,110 @@
+@if (darkPattern(); as pattern) {
+  <div class="dark-pattern-details__title-wrap">
+    <div>
+      <h1 class="h1">{{ pattern.title }}</h1>
+      <h1 class="h1 ">({{ pattern.titleOnAnotherLanguage }})</h1>
+      <div class="dark-pattern-list__dark-pattern__title-another-language">
+        <p>{{ pattern.subtitle }}</p>
+      </div>
+    </div>
+
+    <div class="dark-pattern-details__description-wrap">
+      @for (description of pattern.descriptions; track description) {
+        <p class="paragraph">{{ description }}</p>
+      }
+    </div>
+  </div>
+
+  <div class="dark-pattern-details__main-mechanics">
+    <div class="dark-pattern-details__main-mechanics__text">
+      <h3 class="h3">Ключевая механика</h3>
+      @for (keyMechanic of pattern.keyMechanics; track keyMechanic) {
+        <p class="paragraph">{{ keyMechanic }}</p>
+      }
+    </div>
+    <div>
+      <video
+        [src]="pattern.keyMechanicsVideo"
+        width="700px"
+        autoplay
+        loop
+        muted
+        playsinline></video>
+    </div>
+  </div>
+
+  <div class="dark-pattern-details__grid">
+    <div class="dark-pattern-details__list">
+      <h3 class="h3">Последствия для пользователя</h3>
+      @for (consequenceForTheUser of pattern.consequencesForTheUser; track consequenceForTheUser) {
+        <div class="dark-pattern-details__list-element">
+          <div class="circle"></div>
+
+          <p class="paragraph">{{ consequenceForTheUser }}</p>
+        </div>
+      }
+    </div>
+
+    <div class="dark-pattern-details__line"></div>
+
+    <div class="dark-pattern-details__list">
+      <h3 class="h3">Альтернативы (этичные решения)</h3>
+
+      <div class="dark-pattern-details__list-column">
+        <div class="dark-pattern-details__list">
+          @for (alternativeFirst of pattern.alternativesFirst; track alternativeFirst) {
+            <div class="dark-pattern-details__list-element">
+              <div class="circle"></div>
+              <p class="paragraph">{{ alternativeFirst }}</p>
+            </div>
+          }
+        </div>
+        <div class="dark-pattern-details__list">
+          @if (pattern.alternativesSecond.length > 0) {
+            @for (alternativeSecond of pattern.alternativesSecond; track alternativeSecond) {
+              <div class="dark-pattern-details__list-element">
+                <div class="circle"></div>
+                <p class="paragraph">{{ alternativeSecond }}</p>
+              </div>
+            }
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dark-pattern-details__footer">
+    <a class="dark-pattern-details__footer__another-pattern">
+      <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="1" width="33" height="33" rx="16.5" stroke="black" stroke-width="2"/>
+        <path d="M9.29289 16.7929C8.90237 17.1834 8.90237 17.8166 9.29289 18.2071L15.6569 24.5711C16.0474 24.9616 16.6805 24.9616 17.0711 24.5711C17.4616 24.1805 17.4616 23.5474 17.0711 23.1569L11.4142 17.5L17.0711 11.8431C17.4616 11.4526 17.4616 10.8195 17.0711 10.4289C16.6805 10.0384 16.0474 10.0384 15.6569 10.4289L9.29289 16.7929ZM25 17.5L25 16.5L10 16.5L10 17.5L10 18.5L25 18.5L25 17.5Z" fill="black"/>
+      </svg>
+      <a [routerLink]="['/',type(),pattern.previousDarkPattern.id]">{{pattern.previousDarkPattern.title}}</a>
+    </a>
+
+    <div class="dark-pattern-details__footer__central-element" >
+      <button class="button" [routerLink]="['/',type()]">вернуться в каталог</button>
+      <div class="dark-pattern-details__footer__central-element__logo" >
+        <img
+          ngSrc="/logos/badlogo-header.svg"
+          alt=""
+          width="129"
+          height="43"
+          priority
+        >
+        <p class="paragraph-tiny">2025 - {{nowDate | date: 'y'}}</p>
+      </div>
+    </div>
+
+    <a class="dark-pattern-details__footer__another-pattern">
+      <a [routerLink]="['/',type(),pattern.nextDarkPattern.id]">{{pattern.nextDarkPattern.title}}</a>
+      <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="1" width="33" height="33" rx="16.5" stroke="black"  stroke-width="2"/>
+        <path d="M25.7071 18.2071C26.0976 17.8166 26.0976 17.1834 25.7071 16.7929L19.3431 10.4289C18.9526 10.0384 18.3195 10.0384 17.9289 10.4289C17.5384 10.8195 17.5384 11.4526 17.9289 11.8431L23.5858 17.5L17.9289 23.1569C17.5384 23.5474 17.5384 24.1805 17.9289 24.5711C18.3195 24.9616 18.9526 24.9616 19.3431 24.5711L25.7071 18.2071ZM10 17.5L10 18.5L25 18.5L25 17.5L25 16.5L10 16.5L10 17.5Z" fill="black"/>
+      </svg>
+    </a>
+  </div>
+
+
+}
+

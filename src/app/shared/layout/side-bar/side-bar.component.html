@@ -1,0 +1,15 @@
+<div class="side-bar_wrap">
+  @for (catalog of catalogs(); track catalog.id) {
+    <a
+      [routerLink]="'/'+catalog.slug"
+      routerLinkActive="link__active"
+      class="side-bar_wrap-element"
+    >
+
+      <div>
+        <span>{{ catalog.title }} ({{catalog.titleAnotherLanguage}})</span>
+      </div>
+      <img (click)="closeTest($event)" ngSrc="icons/X.svg" width="16" height="16" priority>
+    </a>
+  }
+</div>

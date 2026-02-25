@@ -1,0 +1,129 @@
+.dark-pattern-details__title-wrap {
+  display: flex;
+  gap: 100px;
+  //justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 80px;
+  border-bottom: 2px solid #000;
+}
+
+.dark-pattern-details__description-wrap {
+  max-width: 650px;
+}
+
+.dark-pattern-list__dark-pattern__title-another-language {
+  display: flex;
+  height: 34px;
+  padding: 0 20px;
+  width: fit-content;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: 2px solid #000;
+  white-space: nowrap;
+  margin-top: 20px;
+}
+
+.dark-pattern-details__title-another-language {
+  margin-top: 20px;
+}
+
+.dark-pattern-details__main-mechanics {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  padding: 80px 0;
+  border-bottom: 2px solid #000;
+}
+
+.dark-pattern-details__main-mechanics__text {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.dark-pattern-details__list-element {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  gap: 10px;
+}
+
+.dark-pattern-details__list {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 15px;
+  justify-items: start;
+  align-items: start;
+  align-content: start
+}
+
+.circle {
+  width: 11px;
+  height: 11px;
+  border: 2px solid #000;
+  border-radius: 20px
+}
+
+.dark-pattern-details__grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 40px;
+  padding: 80px 0;
+}
+
+.dark-pattern-details__line {
+  background: #000;
+  width: 2px;
+  height: 100%;
+}
+
+.dark-pattern-details__list-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.dark-pattern-details__footer {
+  border-top: 2px solid #000;
+  padding: 30px 55px;
+  margin: 0 -55px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.dark-pattern-details__footer__another-pattern {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-family: "Aeonik Pro", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover {
+    > svg {
+      > rect {
+        fill: #83E100;
+      }
+    }
+  }
+}
+
+.dark-pattern-details__footer__central-element {
+  text-align: center;
+}
+
+.dark-pattern-details__footer__central-element__logo {
+  margin-top: 30px;
+
+  > p {
+    margin-top: 3px;
+  }
+}

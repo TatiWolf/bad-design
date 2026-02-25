@@ -1,0 +1,19 @@
+.main__header__router {
+  height: calc(100% - 220px);
+  padding:55px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+.main {
+  display: grid;
+}
+
+.main__header {
+  grid-area: 1 / 1 / 2 / 12;
+  height: 100vh;
+}
+
+.main__side-bar {
+  grid-area: 1 / 12 / 2 / 13;
+}

@@ -1,0 +1,141 @@
+@use "font";
+@use 'normalize.css/normalize.css';
+
+* {
+  &::-webkit-scrollbar-thumb {
+
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+    background-color: transparent;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: #E4E4E4;
+  font-family: "JetBrains Mono", serif;
+}
+
+.section {
+  position: relative;
+  max-width: 1440px;
+}
+
+.container {
+  margin: 0 55px;
+}
+
+.header-link {
+  color: #000;
+  font-family: "Aeonik Pro", serif;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+  padding: 0 5px;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    background: #B6FF51;
+  }
+
+  &:active {
+    background: #83E100;
+  }
+}
+
+.link__active {
+  background: #83E100;
+}
+
+.h1 {
+  color: #000;
+  font-family: "Aeonik Pro", serif;
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 60px; /* 107.143% */
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.h2 {
+  color: #000;
+  font-family: "Aeonik Pro", serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.h3 {
+  margin: 0;
+  font-family: "Aeonik Pro", serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  background-color: #B6FF51;
+  width: fit-content;
+  padding: 1px 5px;
+}
+
+.paragraph {
+  color: #121212;
+  font-family: "JetBrains Mono", serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: lowercase;
+}
+
+.button {
+  font-family: "Aeonik Pro", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  border: 2px solid #000000;
+  background: #E4E4E4;
+  cursor: pointer;
+  &:hover {
+    background: #B6FF51;
+  }
+  &:active {
+    background: #83E100;
+  }
+}
+
+.paragraph-tiny {
+  font-family: "JetBrains Mono", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 10px;
+  line-height: 100%;
+  letter-spacing: 0;
+  text-align: center;
+  text-transform: lowercase;
+}
