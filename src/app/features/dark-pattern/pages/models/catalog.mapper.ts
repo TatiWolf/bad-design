@@ -1,30 +1,20 @@
 import {CatalogDto} from './catalog-dto';
-import {CatalogModel, DarkPatternCatalog} from './catalog.model';
-import {isDarkPatternType} from './dark-pattern.type';
+import {CatalogModel} from './catalog.model';
+import {isCatalogType} from './catalog.type';
 
-export function mapCatalogDtoToModel(
+export function mapCatalogDtoToCatalogModel(
   dto: CatalogDto
 ): CatalogModel {
 
-  if (!isDarkPatternType(dto.slug)) {
+  if (!isCatalogType(dto.slug)) {
     throw new Error(`Invalid dark pattern type: ${dto.slug}`);
   }
-
-  const mappedList = dto.darkPatternCatalog.map(el =>
-    new DarkPatternCatalog(
-      el.id,
-      el.title,
-      el.titleAnotherLanguage,
-      el.description
-    )
-  );
 
   return new CatalogModel(
     dto.id,
     dto.title,
-    dto.titleAnotherLanguage,
+    dto.title_another_language,
     dto.slug,
     dto.descriptions,
-    mappedList
   );
 }

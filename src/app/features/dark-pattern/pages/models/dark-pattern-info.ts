@@ -1,8 +1,11 @@
-export class DarkPattern {
+import {CatalogId} from './catalog.type';
+
+export class DarkPatternInfo {
   id: string;
   title: string;
   titleOnAnotherLanguage: string;
   subtitle: string;
+  catalog: CatalogId
   descriptions: string[];
   keyMechanics: string[];
   keyMechanicsVideo: string;
@@ -24,6 +27,7 @@ export class DarkPattern {
     alternatives: string[],
     previousDarkPattern: AnotherDarkPattern,
     nextDarkPattern: AnotherDarkPattern,
+    catalog: CatalogId
   ) {
     this.id = id;
     this.title = title;
@@ -39,6 +43,7 @@ export class DarkPattern {
     this.alternativesSecond = second;
     this.previousDarkPattern = previousDarkPattern;
     this.nextDarkPattern = nextDarkPattern;
+    this.catalog = catalog
   }
 
 

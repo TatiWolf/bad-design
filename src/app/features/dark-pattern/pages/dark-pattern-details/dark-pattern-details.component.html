@@ -3,9 +3,12 @@
     <div>
       <h1 class="h1">{{ pattern.title }}</h1>
       <h1 class="h1 ">({{ pattern.titleOnAnotherLanguage }})</h1>
-      <div class="dark-pattern-list__dark-pattern__title-another-language">
-        <p>{{ pattern.subtitle }}</p>
-      </div>
+      @if (catalog(); as catalog) {
+        <div class="dark-pattern-list__dark-pattern__title-another-language">
+          <p>{{ catalog.title }} ({{ catalog.slug }})</p>
+        </div>
+      }
+
     </div>
 
     <div class="dark-pattern-details__description-wrap">

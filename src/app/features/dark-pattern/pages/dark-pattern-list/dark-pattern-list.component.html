@@ -3,7 +3,7 @@
 
     <div class="dark-pattern-list__title-wrap">
       <div>
-        <h1 class="h1">{{ pattern.title }}</h1>
+        <h1 class="h1">{{ pattern.title |lowercase }}</h1>
         <h1 class="h1">({{ pattern.titleAnotherLanguage }})</h1>
       </div>
 
@@ -15,16 +15,16 @@
 
     </div>
     <div class="dark-pattern-list__dark-patterns-wrap">
-      @for (darkPatternElement of pattern.darkPatternCatalog; track darkPatternElement.id) {
+      @for (darkPatternElement of darkPattern(); track darkPatternElement.id) {
         <div [routerLink]="[darkPatternElement.id]" class="dark-pattern-list__dark-pattern">
           <div class="dark-pattern-list__dark-pattern__title-wrap">
             <h2 class="h2">{{ darkPatternElement.title }}</h2>
             <div class="dark-pattern-list__dark-pattern__title-another-language">
-              <p>{{ darkPatternElement.titleAnotherLanguage }}</p>
+              <p>{{ darkPatternElement.titleAnotherLanguageForList }}</p>
             </div>
           </div>
           <div class="dark-pattern-list__dark-pattern__description">
-            <p class="paragraph">{{ darkPatternElement.description }}</p>
+            <p class="paragraph">{{ darkPatternElement.descriptionForList }}</p>
           </div>
         </div>
       }

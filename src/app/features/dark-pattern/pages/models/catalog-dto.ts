@@ -1,15 +1,14 @@
 export interface CatalogDto {
   id: number;
   title: string;
-  titleAnotherLanguage:string
+  title_another_language:string
   slug: string;
   descriptions: string[];
-  darkPatternCatalog: CatalogElementDto[];
 }
 
-export interface CatalogElementDto {
+export interface DarkPatternDto {
   id: number;
   title: string;
-  titleAnotherLanguage: string;
-  description:string
+  title_another_language_for_list: string;
+  description_for_list:string
 }

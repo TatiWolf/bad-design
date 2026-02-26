@@ -1,0 +1,1 @@
+import{Ia as t,Za as o,_a as a,jb as i}from"./chunk-4WI2V2WS.js";var m=class n{static \u0275fac=function(e){return new(e||n)};static \u0275cmp=t({type:n,selectors:[["app-main"]],decls:2,vars:0,template:function(e,s){e&1&&(o(0,"p"),i(1,"main works!"),a())},encapsulation:2,changeDetection:0})};export{m as MainComponent};

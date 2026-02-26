@@ -1,14 +1,16 @@
 import {ChangeDetectionStrategy, Component, computed, inject} from '@angular/core';
 import {ActivatedRoute, Router, RouterLink} from '@angular/router';
-import {toSignal} from '@angular/core/rxjs-interop';
-import {map} from 'rxjs';
-import {isDarkPatternType} from '../models/dark-pattern.type';
+import {toObservable, toSignal} from '@angular/core/rxjs-interop';
+import {combineLatest, map, of, switchMap} from 'rxjs';
+import {isCatalogType} from '../models/catalog.type';
 import {DarkPatternService} from '../../services/dark-pattern.service';
+import {LowerCasePipe} from '@angular/common';
 
 @Component({
   selector: 'app-dark-pattern-list',
   imports: [
-    RouterLink
+    RouterLink,
+    LowerCasePipe
   ],
   templateUrl: './dark-pattern-list.component.html',
   styleUrl: './dark-pattern-list.component.scss',
@@ -25,7 +27,7 @@ export class DarkPatternListComponent {
   readonly type = toSignal(
     this.route.paramMap.pipe(
       map(params => params.get('type')),
-      map(raw => isDarkPatternType(raw) ? raw : null)
+      map(raw => isCatalogType(raw) ? raw : null)
     ),
     {initialValue: null}
   );
@@ -45,4 +47,18 @@ export class DarkPatternListComponent {
 
     return catalogs.find(c => c.slug === type) ?? null;
   });
+
+  readonly darkPattern = toSignal(
+    combineLatest([
+      toObservable(this.type),
+    ]).pipe(
+      switchMap(([type]) => {
+        if (!type) return of(null);
+        return this.darkPatternService.getDarkPatternById(type);
+      })
+    ),
+    { initialValue: null }
+  );
+
+
 }

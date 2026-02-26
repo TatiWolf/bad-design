@@ -1,151 +1,25 @@
-import {Injectable} from '@angular/core';
-import {Observable, of} from 'rxjs';
+import {inject, Injectable} from '@angular/core';
+import {catchError, Observable, of} from 'rxjs';
 import {CatalogDto} from '../../../features/dark-pattern/pages/models/catalog-dto';
+import {APP_CONFIG} from '../../config/app-config.token';
+import {HttpClient} from '@angular/common/http';
 
-const catalogDtos: CatalogDto[] = [
-  {
-    id: 1,
-    title: 'Навязчивость',
-    titleAnotherLanguage:'Nagging',
-    slug: 'nagging',
-    descriptions: ['это тип манипулятивных интерфейсов, при котором сервис систематически и повторяющеся побуждает пользователя к одному и тому же действию, игнорируя его предыдущие отказы или попытки отложить решение.\n', 'особенность заключается в том, что действие не принуждается напрямую и не скрывается, а продавливается через повторение, что снижает качество пользовательского опыта, нарушает ощущение контроля и подрывает добровольность принятия решений.'],
-    darkPatternCatalog: [
-      {
-        id: 1,
-        title: 'Повторяющиеся запросы',
-        titleAnotherLanguage: 'Repeated Prompts',
-        description:
-          'интерфейс снова и снова предлагает одно и то же действие, даже после отказа. Повторение создаёт давление и повышает вероятность согласия'
-      },
-      {
-        id: 2,
-        title: 'Контекстная настойчивость',
-        titleAnotherLanguage: 'Contextual Nagging',
-        description:
-          'интерфейс встраивает предложение в релевантный контекст использования — в момент, когда пользователь наиболее восприимчив к действию'
-      },
-      {
-        id: 3,
-        title: 'Игнорирование отказа',
-        titleAnotherLanguage: 'Refusal Ignoring',
-        description:
-          'интерфейс не фиксирует или не уважает ранее выраженный отказ пользователя и повторно предлагает то же действие'
-      },
-      {
-        id: 4,
-        title: 'Напоминания вне интерфейса',
-        titleAnotherLanguage: 'Cross-Channel Nagging',
-        description:
-          'после отказа или игнорирования предложения система продолжает стимулировать действие через другие каналы — пуш-уведомления, email, СМС'
-      },
-      {
-        id: 5,
-        title: 'Прерывание сценария',
-        titleAnotherLanguage: 'Flow Interruption',
-        description:
-          'пользовательский сценарий намеренно прерывается всплывающим окном, модальным экраном или обязательным действием.'
-      }
-    ]
-  },
-  {
-    id: 2,
-    title: 'Препятствия',
-    titleAnotherLanguage:'Obstruction',
-    slug: 'obstruction',
-    descriptions: ['это тип манипулятивных интерфейсов, при котором сервис намеренно усложняет или затягивает выполнение действий, невыгодных для платформы, сохраняя при этом формальную возможность их совершения.', 'Ключевая особенность заключается в том, что действие технически доступно, но его выполнение становится настолько неудобным, что решение откладывается или не совершается вовсе.'],
-    darkPatternCatalog: [
-      {
-        id: 1,
-        title: 'Лабиринт отказа',
-        titleAnotherLanguage: 'roach motel',
-        description:
-          'подключиться к услуге легко, а отказаться сложно. процесс отмены растянут и запутан'
-      },
-      {
-        id: 2,
-        title: 'Вставка фрикции',
-        titleAnotherLanguage: 'friction insertion',
-        description:
-          'к простому действию добавляются лишние шаги и подтверждения. усталость повышает вероятность отказа от первоначального намерения'
-      },
-      {
-        id: 3,
-        title: 'Вынужденные альтернативные каналы',
-        titleAnotherLanguage: 'channel forcing',
-        description:
-          'отказ возможен только через другой, менее удобный способ — например, звонок или письмо. дополнительные усилия снижают вероятность отмены'
-      },
-      {
-        id: 4,
-        title: 'Непропорциональное усилие',
-        titleAnotherLanguage: 'disproportionate effort',
-        description:
-          'для отказа требуется больше действий, чем для согласия. дисбаланс усилий подталкивает к сохранению текущего выбора'
-      },
-      {
-        id: 5,
-        title: 'Повторяющиеся подтверждения',
-        titleAnotherLanguage: 'confirmation loops',
-        description:
-          'интерфейс снова и снова предлагает одно и то же действие, даже после отказа. повторение создаёт давление и повышает вероятность согласия'
-      },
-      {
-        id: 6,
-        title: 'Препятствующие тайминги',
-        titleAnotherLanguage: 'temporal obstruction',
-        description:
-          'отмена возможна только в ограниченное время или после ожидания. пользователь откладывает действие и теряет возможность отказаться'
-      },
-      {
-        id: 7,
-        title: 'Эмоциональное давление при отказе',
-        titleAnotherLanguage: 'guilt-based friction',
-        description:
-          'Формулировки вызывают чувство вины или страха при выборе отказа. Эмоциональный дискомфорт повышает вероятность согласия'
-      }
-    ]
-  },
-  {
-    id: 3,
-    title: 'Сокрытие',
-    titleAnotherLanguage:'Sneaking',
-    slug: 'sneaking',
-    descriptions: ['это паттерны, в которых интерфейс умышленно делает часть информации менее заметной, скрытой или искажённой, чтобы повлиять на выбор пользователя.', 'Манипуляция строится на создании ложного ощущения прозрачности: пользователь думает, что принимает решение на основе полноты данных, хотя на самом деле важные условия остаются скрытыми.'],
-    darkPatternCatalog: []
-  },
-  {
-    id: 4,
-    title: 'Манипуляция интерфейсом',
-    titleAnotherLanguage:'Interface Interference',
-    slug: 'interface-interference',
-    descriptions: ['тип манипулятивных паттернов, при котором сервис искажает визуальную и структурную организацию интерфейса, чтобы подтолкнуть пользователя к выгодному для платформы действию.', 'особенность заключается в том, что манипуляция происходит на уровне формы, а не содержания.'],
-    darkPatternCatalog:[]
-  },
-  {
-    id: 5,
-    title: 'Принуждение к действию',
-    titleAnotherLanguage:'Forced Action',
-    slug: 'forced-action',
-    descriptions: ['это тип паттернов, при котором сервис блокирует доступ к функционалу или дальнейшему взаимодействию до тех пор, пока пользователь не выполнит требуемое действие, выгодное платформе.', 'пользователь совершает действие не по собственной инициативе, а для устранения блокировки.'],
-    darkPatternCatalog:[]
-  }
-];
 
-@Injectable({
+  @Injectable({
   providedIn: 'root',
 })
 
 export class CatalogApiService {
-  // private http: HttpClient = inject(HttpClient)
-  // private config = inject(APP_CONFIG);
+  private http: HttpClient = inject(HttpClient)
+  private config = inject(APP_CONFIG);
+
 
   getCatalogs(): Observable<CatalogDto[]> {
-    return of(catalogDtos);
-    // return this.http.get<CatalogDto[]>(`${this.config.apiUrl}/catalogs`).pipe(
-    //   catchError(err => {
-    //     console.error('CatalogModel API error:', err);
-    //     return of(catalogDtos);
-    //   })
-    // )
+    return this.http.get<CatalogDto[]>(`${this.config.apiUrl}/catalogs`).pipe(
+      catchError(err => {
+        console.error('CatalogModel API error:', err);
+        return of();
+      })
+    )
   }
 }

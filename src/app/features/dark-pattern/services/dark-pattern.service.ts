@@ -1,11 +1,16 @@
 import {inject, Injectable} from '@angular/core';
-import {map, Observable, shareReplay} from 'rxjs';
-import {mapCatalogDtoToModel} from '../pages/models/catalog.mapper';
+import {filter, map, Observable, shareReplay} from 'rxjs';
+import {mapCatalogDtoToCatalogModel} from '../pages/models/catalog.mapper';
 import {CatalogApiService} from '../../../core/services/api/catalog-api.service';
-import {DarkPatternType} from '../pages/models/dark-pattern.type';
+import {CatalogType} from '../pages/models/catalog.type';
 import {DarkPatternDetailsApi} from './api/dark-pattern-details-api';
-import {mapDarkPatternDtoToDarkPattern} from '../pages/models/dark-pattern.mapper';
-import {DarkPattern} from '../pages/models/dark-pattern';
+import {
+  mapDarkPatternCatalogDtoToDarkPatternCatalog,
+  mapDarkPatternDtoToDarkPattern
+} from '../pages/models/dark-pattern.mapper';
+import {DarkPatternInfo} from '../pages/models/dark-pattern-info';
+import {DarkPatternApi} from './api/dark-pattern-api';
+import {DarkPattern} from '../pages/models/catalog.model';
 
 
 @Injectable({
@@ -14,30 +19,35 @@ import {DarkPattern} from '../pages/models/dark-pattern';
 export class DarkPatternService {
   private catalogApiService: CatalogApiService = inject(CatalogApiService);
 private darkPatternDetailsApi: DarkPatternDetailsApi = inject(DarkPatternDetailsApi)
+  private darkPatternApi: DarkPatternApi = inject(DarkPatternApi)
+
   getCatalog() {
     return this.catalogApiService.getCatalogs().pipe(
-      map(dtos => dtos.map(mapCatalogDtoToModel)),
+      map(dtos => dtos.map(mapCatalogDtoToCatalogModel)),
       shareReplay(1)
     );
   }
 
-  getDarkPatternByAlias(type: DarkPatternType) {
-    return this.getCatalog().pipe(
-      map(catalogs =>
-        catalogs.find(c => c.slug === type) ?? null
-      )
+  getDarkPatternById(type: CatalogType):Observable<DarkPattern[]> {
+    return this.darkPatternApi.getDarkPatternById(type).pipe(
+      filter(dto => !!dto),
+      map(dto=>mapDarkPatternCatalogDtoToDarkPatternCatalog(dto))
     );
   }
 
   getDarkPatternBySlug(
-    slug: DarkPatternType,
+    slug: CatalogType,
     darkPatternId: number
-  ): Observable<DarkPattern | null> {
-
+  ): Observable<DarkPatternInfo | null> {
+    console.log('test')
     return this.darkPatternDetailsApi
       .getDarkPatternDetailsById(slug, darkPatternId)
       .pipe(
-        map(dto => dto ? mapDarkPatternDtoToDarkPattern(dto) : null)
+        map(dto => dto ? mapDarkPatternDtoToDarkPattern(dto) : null),
+        map(test=> {
+          console.log(test)
+          return test;
+        })
       );
   }
 

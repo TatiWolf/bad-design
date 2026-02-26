@@ -1,33 +1,31 @@
-import {DarkPatternType} from './dark-pattern.type';
+import {CatalogType} from './catalog.type';
 
 export class CatalogModel {
   id: number;
   title: string;
   titleAnotherLanguage:string
-  slug: DarkPatternType;
+  slug: CatalogType;
   descriptions: string[];
-  darkPatternCatalog: DarkPatternCatalog[]
 
-  constructor(id: number, title: string,titleAnotherLanguage:string, slug: DarkPatternType, descriptions: string[], darkPatternCatalog: DarkPatternCatalog[]) {
+  constructor(id: number, title: string, titleAnotherLanguage:string, slug: CatalogType, descriptions: string[], ) {
     this.id = id;
     this.title = title;
     this.slug = slug;
-    this.darkPatternCatalog = darkPatternCatalog;
     this.descriptions = descriptions;
     this.titleAnotherLanguage = titleAnotherLanguage;
   }
 }
 
-export class DarkPatternCatalog {
+export class DarkPattern {
   id: number;
   title: string;
-  titleAnotherLanguage: string;
-  description: string
+  titleAnotherLanguageForList: string;
+  descriptionForList: string
 
   constructor(id: number, title: string, titleAnotherLanguage: string, description: string) {
     this.id = id;
     this.title = title;
-    this.titleAnotherLanguage = titleAnotherLanguage;
-    this.description = description;
+    this.titleAnotherLanguageForList = titleAnotherLanguage;
+    this.descriptionForList = description;
   }
 }

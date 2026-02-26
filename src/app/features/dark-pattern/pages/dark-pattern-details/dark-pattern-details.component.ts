@@ -1,8 +1,8 @@
-import {ChangeDetectionStrategy, Component, inject,} from '@angular/core';
+import {ChangeDetectionStrategy, Component, computed, inject,} from '@angular/core';
 import {ActivatedRoute, RouterLink} from '@angular/router';
 import {toObservable, toSignal} from '@angular/core/rxjs-interop';
 import {combineLatest, map, of, switchMap} from 'rxjs';
-import {isDarkPatternId, isDarkPatternType} from '../models/dark-pattern.type';
+import {getCatalogById, isCatalogType} from '../models/catalog.type';
 import {DarkPatternService} from '../../services/dark-pattern.service';
 import {DatePipe, NgOptimizedImage} from '@angular/common';
 
@@ -25,15 +25,16 @@ export class DarkPatternDetailsComponent {
   readonly type = toSignal(
     this.route.paramMap.pipe(
       map(params => params.get('type')),
-      map(raw => isDarkPatternType(raw) ? raw : null)
+      map(raw => isCatalogType(raw) ? raw : null)
     ),
     { initialValue: null }
   );
 
   readonly id = toSignal(
+
     this.route.paramMap.pipe(
+
       map(params => Number(params.get('id'))),
-      map(value => isDarkPatternId(value) ? value : null)
     ),
     { initialValue: null }
   );
@@ -43,12 +44,23 @@ export class DarkPatternDetailsComponent {
       toObservable(this.type),
       toObservable(this.id)
     ]).pipe(
+
       switchMap(([type, id]) => {
+        console.log(type)
+        console.log(id)
         if (!type || !id) return of(null);
         return this.darkPatternService.getDarkPatternBySlug(type, id);
       })
     ),
     { initialValue: null }
   );
+
+  readonly catalog = computed(() => {
+    const pattern = this.darkPattern();
+    if (!pattern) return null;
+
+    return getCatalogById(pattern.catalog);
+  });
+
   nowDate: Date = new Date();
 }
