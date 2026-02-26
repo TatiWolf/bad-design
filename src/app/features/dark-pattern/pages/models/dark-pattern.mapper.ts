@@ -17,12 +17,9 @@ export function mapDarkPatternDtoToDarkPattern(
       dto.key_mechanics_video,
       dto.consequences_for_the_user,
       dto.alternatives,
-    // new AnotherDarkPattern(dto.previousDarkPattern.id, dto.previousDarkPattern.title),
-    // new AnotherDarkPattern(dto.nextDarkPattern.id, dto.nextDarkPattern.title),
-    new AnotherDarkPattern('1', 'dto.previousDarkPattern.title'),
-    new AnotherDarkPattern('2', 'dto.nextDarkPattern.title'),
+    new AnotherDarkPattern(dto.previousDarkPattern.id, dto.previousDarkPattern.title),
+    new AnotherDarkPattern(dto.nextDarkPattern.id, dto.nextDarkPattern.title),
     dto.catalog
-
   );
 }
 
