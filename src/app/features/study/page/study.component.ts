@@ -14,12 +14,12 @@ import {Study} from '../models/study.model';
 export class StudyComponent {
 
   protected readonly images = [
-    'study/study-1.svg',
-    'study/study-2.svg',
-    'study/study-3.svg',
-    'study/study-4.svg',
-    'study/study-5.svg',
-    'study/study-6.svg'
+    'study-images/study-1.svg',
+    'study-images/study-2.svg',
+    'study-images/study-3.svg',
+    'study-images/study-4.svg',
+    'study-images/study-5.svg',
+    'study-images/study-6.svg'
   ];
 
   private readonly studyService: StudyService = inject(StudyService);
