@@ -1,0 +1,47 @@
+<div class="studies">
+  <div class="studies__title">
+    <h1 class="h1">исследования</h1>
+    <div>
+      <p class="paragraph">В этом разделе собраны ключевые исследования и академические работы, на которых базируется
+        каталог манипулятивных паттернов. </p>
+      <p class="paragraph">Эти материалы служат фундаментом для понимания природы манипулятивного дизайна и помогают
+        систематизировать знания для практического использования.</p>
+    </div>
+  </div>
+
+  <div class="studies__list">
+    @for (study of studies(); track study.id) {
+      <div class="studies__card-wrap">
+
+        <div class="studies__card">
+
+          <div class="studies__image-wrap">
+            <img class="studies__image" [src]="images[study.index_image]" alt="">
+          </div>
+
+          <div class="studies__info">
+            <p class="studies__author">{{ study.author }}—{{ study.created_year }}</p>
+
+            <h2 class="studies__title">{{ study.title }}</h2>
+
+            <div class="studies__original_title">
+              <p class="studies__original_title-text">{{ study.original_title }}</p>
+            </div>
+          </div>
+
+          <div>
+
+
+            <div class="studies__line"></div>
+
+            <div class="studies__description">
+              <p>{{ study.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+
+  </div>
+
+</div>
