@@ -1,1 +1,122 @@
-<p>main works!</p>
+<div class="main__title">
+  <div class="main__title__first-header">
+    <h1 class="header_JetBrains">BADD — образовательный проект о темных механиках интерфейсов.</h1>
+  </div>
+  <div class="main__title__second-header" style="">
+    <h2 class="header_JetBrains">Проект объединяет реальные примеры из приложений и сервисов, структурирует
+      их по международным моделям (Brignull, Gray, Mathur, Deceptive Design) и объясняет, какие когнитивные механизмы
+      стоят за каждым паттерном.</h2>
+  </div>
+  <img ngSrc="icons/arrow_bottom.svg" alt="" width="15" height="47" priority>
+</div>
+
+<div class="dark-pattern">
+  <div class="dark-pattern__title">
+    <h2 class="h3_Aeonik-pro">dark pattern (темный паттерн)</h2>
+    <p class="dark-pattern__description paragraph">— это повторяющаяся схема интерфейсных решений, которая намеренно
+      использует особенности
+      человеческого восприятия и поведения, чтобы направить пользователя к действиям, выгодным системе,
+      но не обязательно
+      соответствующим его собственным интересам.</p>
+  </div>
+
+  <div class="dark-pattern__stats">
+
+    <div class="dark-pattern__stat">
+      <div class="dark-pattern__stat-circle">
+        <p class="dark-pattern__stat-circle__value h3_Aeonik-pro">66,8 %</p>
+      </div>
+      <p class="dark-pattern__description paragraph">исследованных сайта использовали два или более темных паттернов</p>
+    </div>
+
+    <div class="dark-pattern__stat">
+      <div class="dark-pattern__stat-circle">
+        <p class="dark-pattern__stat-circle__value h3_Aeonik-pro">97%</p>
+      </div>
+      <p class="dark-pattern__description paragraph">популярных сайтов и приложений, используемых потребителями в ЕС,
+        содержали хотя бы один манипулятивный прием</p>
+    </div>
+
+    <div class="dark-pattern__stat">
+      <div class="dark-pattern__stat-circle">
+        <p class="dark-pattern__stat-circle__value h3_Aeonik-pro">~3,5</p>
+      </div>
+      <p class="dark-pattern__description paragraph">среднее количество паттернов на одно приложение </p>
+    </div>
+
+  </div>
+
+  <div class="dark-pattern__info">
+    <p class="paragraph">Тёмные паттерны возникают на стыке поведенческой психологии и проектных решений, часто
+      как побочный эффект оптимизации под метрики и конверсии.</p>
+    <p class="paragraph">Многие из них эксплуатируют те же механизмы, на которые опираются классические эвристики
+      юзабилити, описанные <b>Якобом Нильсеном:</b> ограниченную внимательность пользователя, стремление к минимальным
+      усилиям,
+      доверие к системе и склонность следовать предложенному пути.</p>
+  </div>
+
+</div>
+
+<div class="dark-pattern-impact">
+  <h2 class="h3_Aeonik-pro">К чему приводит использование?</h2>
+  <p class="paragraph">Академические исследования показывают, что такие механики встречаются очень широко: в обзоре
+    веб-сайтов и приложений более 75% ресурсов использовали хотя бы один тёмный паттерн, а многие — несколько
+    одновременно. Другие исследования фиксируют, что интерфейсы с тёмными паттернами повышают вероятность согласия
+    пользователя на подписку или покупку на порядок 15–20% по сравнению с нейтральными вариантами, даже если
+    пользователь изначально отказывается.</p>
+  <p class="paragraph">Из-за такой логики проектных решений люди нередко совершают действия, которые не соответствуют
+    их намерениям или ожиданиям. В результате это может снижать доверие к цифровым продуктам и ухудшать общий опыт
+    взаимодействия.</p>
+</div>
+
+<div class="dark-pattern-guide">
+  <div class="dark-pattern-guide__row">
+    <h2 class="dark-pattern-guide__title h3_Aeonik-pro">как определить темный паттерн и найти его в каталоге?</h2>
+
+    <div class="dark-pattern-guide__steps">
+      <div class="dark-pattern-guide__step">
+        <div class="dark-pattern-guide__step__question">
+          <div class="dark-pattern-guide__step__circle">1</div>
+          <p>Что делает паттерн?</p>
+        </div>
+        <div class="dark-pattern-guide__step__description">
+          <p class="paragraph">Начните с наблюдения за тем, что именно делает интерфейс в момент взаимодействия. Важно
+            сосредоточиться на сценарии и ощущении от него.</p>
+        </div>
+      </div>
+      <div class="dark-pattern-guide__step">
+        <div class="dark-pattern-guide__step__question">
+          <div class="dark-pattern-guide__step__circle">2</div>
+          <p>к какой механике его можно отнести?</p>
+        </div>
+        <div class="dark-pattern-guide__step__description">
+          <p class="paragraph">Далее сопоставьте наблюдаемое поведение с тем, какой тип воздействия использует
+            интерфейс.
+            В каталоге паттерны сгруппированы по механике — то есть по тому, как именно система добивается нужного
+            решения, а не по типу продукта, экрану или визуальному стилю.</p>
+          <p class="paragraph">Чтобы выбрать направление, задайте себе простой вопрос: <b>
+            интерфейс давит
+            повторением, создаёт препятствия, скрывает информацию, манипулирует формой подачи или блокирует путь
+            без обязательного действия?
+          </b></p>
+          <p class="paragraph">
+            Ответ на этот вопрос помогает отнести кейс к одной из пяти механик и быстро сузить поиск до релевантных
+            паттернов внутри категории.
+          </p>
+        </div>
+      </div>
+      <div class="dark-pattern-guide__step">
+        <div class="dark-pattern-guide__step__question">
+          <p>дополнительно</p>
+        </div>
+        <div class="dark-pattern-guide__step__description">
+          <p class="paragraph">Один интерфейс <b>может сочетать несколько паттернов</b>, но, как правило, один
+            тип давления является основным.</p>
+          <p class="paragraph">Каталог построен так, чтобы паттерн можно было распознать по совпадению логики
+            воздействия, даже если визуальная реализация и контекст использования отличаются.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

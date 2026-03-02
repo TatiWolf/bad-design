@@ -1,0 +1,157 @@
+.main__title {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.main__title__first-header {
+  max-width: 390px;
+  margin-bottom: 50px;
+}
+
+.main__title__second-header {
+  max-width: 640px;
+  margin-bottom: 85px;
+}
+
+.dark-pattern {
+  margin-top: 150px;
+}
+
+.dark-pattern__stat-circle {
+  border-radius: 100px;
+  border: 2px solid #000;
+  background: #B6FF51;
+  width: 96px;
+  height: 96px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dark-pattern__description {
+  margin-top: 15px;
+}
+
+.dark-pattern__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 80px;
+}
+
+.dark-pattern__title {
+  max-width: 650px;
+}
+
+.dark-pattern__stat:nth-child(1) {
+  margin-top: 270px;
+}
+
+.dark-pattern__stat:nth-child(2) {
+  margin-top: 44px;
+}
+
+.dark-pattern__stat:nth-child(3) {
+  margin-top: 370px;
+  margin-left: -120px;
+}
+
+.dark-pattern__info {
+  margin-top: 90px;
+  max-width: 650px;
+}
+
+.dark-pattern__info p:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.dark-pattern-impact {
+  margin-top: 125px;
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dark-pattern-guide__step__circle {
+  border-radius: 100px;
+  border: 2px solid #000;
+  width: 26px;
+  height: 26px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  color: #000;
+  font-family: "Aeonik Pro", serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: lowercase;
+}
+
+//.dark-pattern-guide__step {
+//  display: flex;
+//  gap: 22px;
+//}
+
+
+
+.dark-pattern-guide__step {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 40px;
+  padding: 40px 0;
+  max-width: 1000px;
+  align-items: start;
+}
+
+.dark-pattern-guide__steps {
+  display: flex;
+  flex-direction: column;
+
+  > .dark-pattern-guide__step {
+    border-bottom: 2px solid #000;
+  }
+
+  > .dark-pattern-guide__step:last-child {
+    border-bottom: none;
+  }
+}
+
+
+
+.dark-pattern-guide__step__question {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.dark-pattern-guide__step__description {
+  max-width: 590px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dark-pattern-guide {
+  margin-top: 125px;
+}
+
+.dark-pattern-guide__step__question p{
+  color: #000;
+  font-family: "Aeonik Pro", serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: lowercase;
+
+}

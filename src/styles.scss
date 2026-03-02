@@ -64,6 +64,28 @@ html {
   background: #B6FF51;
 }
 
+.header_JetBrains {
+  color: #000;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.6px;
+  text-transform: lowercase;
+}
+
+.title {
+  color: #000;
+  text-align: justify;
+  font-family: "Aeonik Pro", serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
 .h1 {
   color: #000;
   font-family: "Aeonik Pro", serif;
@@ -85,7 +107,7 @@ html {
   text-transform: uppercase;
 }
 
-.h3 {
+.h3_Aeonik-pro {
   margin: 0;
   font-family: "Aeonik Pro", serif;
   font-weight: 500;
