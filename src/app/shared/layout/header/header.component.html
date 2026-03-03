@@ -22,5 +22,35 @@
       >исследования</a>
     </div>
 
+    <img src="icons/burger_icon.svg" class="icon__button burger__icon" alt="" (click)="toggleMenu()">
+
+  </div>
+
+  <div class="mobile-menu" [class.open]="isOpen">
+
+    <a routerLink="/about" class="header-link-burger-wrap">
+      <div class="header-link-burger text-link">о проекте</div>
+    </a>
+
+    <a routerLink="/study" class="header-link-burger-wrap">
+      <div class="header-link-burger text-link">исследования</div>
+    </a>
+
+    <p class="header-link-burger text-link" style="margin-top: 35px;">Каталог:</p>
+
+    @for (catalog of catalogs(); track catalog.id; let last = $last) {
+    <a
+      [routerLink]="'/'+catalog.slug"
+      routerLinkActive="link__active"
+      class=" catalog-element"
+    >
+    <div class="header-link-burger catalog " [class.catalog]="!last" [class.last]="last">
+        <span class="text-link">{{ catalog.title }}</span>
+        <span class="text-link"> ({{catalog.titleAnotherLanguage}})</span>
+    </div>
+    </a>
+    }
+
+    <div class="header-year">2025 - {{nowDate | date: 'y'}}</div>
   </div>
 </section>
