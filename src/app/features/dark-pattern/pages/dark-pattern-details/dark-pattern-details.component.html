@@ -27,12 +27,17 @@
     </div>
     <div>
       <video
-        [src]="pattern.keyMechanicsVideo"
-        width="700px"
-        autoplay
+        #videoPlayer
+        width="700"
         loop
         muted
-        playsinline></video>
+        playsinline
+        controls
+        autoplay
+        preload="auto"
+      >
+        <source [attr.src]="pattern.keyMechanicsVideo" type="video/mp4">
+      </video>
     </div>
   </div>
 
@@ -41,7 +46,7 @@
       <h3 class="h3_Aeonik-pro">Последствия для пользователя</h3>
       @for (consequenceForTheUser of pattern.consequencesForTheUser; track consequenceForTheUser) {
         <div class="dark-pattern-details__list-element">
-          <div class="circle"></div>
+          <div class="dark-pattern__stat-circle"></div>
 
           <p class="paragraph">{{ consequenceForTheUser }}</p>
         </div>
@@ -57,7 +62,7 @@
         <div class="dark-pattern-details__list">
           @for (alternativeFirst of pattern.alternativesFirst; track alternativeFirst) {
             <div class="dark-pattern-details__list-element">
-              <div class="circle"></div>
+              <div class="dark-pattern__stat-circle"></div>
               <p class="paragraph">{{ alternativeFirst }}</p>
             </div>
           }
@@ -66,7 +71,7 @@
           @if (pattern.alternativesSecond.length > 0) {
             @for (alternativeSecond of pattern.alternativesSecond; track alternativeSecond) {
               <div class="dark-pattern-details__list-element">
-                <div class="circle"></div>
+                <div class="dark-pattern__stat-circle"></div>
                 <p class="paragraph">{{ alternativeSecond }}</p>
               </div>
             }

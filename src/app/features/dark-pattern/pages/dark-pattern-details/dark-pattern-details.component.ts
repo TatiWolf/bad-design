@@ -1,4 +1,12 @@
-import {ChangeDetectionStrategy, Component, computed, inject,} from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  ElementRef,
+  inject,
+  ViewChild,
+} from '@angular/core';
 import {ActivatedRoute, RouterLink} from '@angular/router';
 import {toObservable, toSignal} from '@angular/core/rxjs-interop';
 import {combineLatest, map, of, switchMap} from 'rxjs';
@@ -18,9 +26,17 @@ import {DatePipe, NgOptimizedImage} from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true
 })
-export class DarkPatternDetailsComponent {
+export class DarkPatternDetailsComponent implements AfterViewInit {
   private route = inject(ActivatedRoute);
   private darkPatternService = inject(DarkPatternService);
+  @ViewChild('videoPlayer') video!: ElementRef<HTMLVideoElement>;
+
+  ngAfterViewInit() {
+    setTimeout(() => {
+      this.video.nativeElement.play().catch(() => {});
+    }, 0);
+  }
+
 
   readonly type = toSignal(
     this.route.paramMap.pipe(
