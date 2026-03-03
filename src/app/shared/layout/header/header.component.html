@@ -28,11 +28,11 @@
 
   <div class="mobile-menu" [class.open]="isOpen">
 
-    <a routerLink="/about" class="header-link-burger-wrap">
+    <a routerLink="/about" class="header-link-burger-wrap" (click)="closeMenu()">
       <div class="header-link-burger text-link">о проекте</div>
     </a>
 
-    <a routerLink="/study" class="header-link-burger-wrap">
+    <a routerLink="/study" class="header-link-burger-wrap" (click)="closeMenu()">
       <div class="header-link-burger text-link">исследования</div>
     </a>
 
@@ -43,6 +43,7 @@
       [routerLink]="'/'+catalog.slug"
       routerLinkActive="link__active"
       class=" catalog-element"
+      (click)="closeMenu()"
     >
     <div class="header-link-burger catalog " [class.catalog]="!last" [class.last]="last">
         <span class="text-link">{{ catalog.title }}</span>

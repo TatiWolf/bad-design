@@ -20,4 +20,9 @@ export class SideBarComponent {
   private darkPatternService = inject(DarkPatternService);
 
   readonly catalogs = this.darkPatternService.catalogs
+
+  closeTest(event: MouseEvent) {
+    //   event.stopPropagation();
+    // this.router.navigate(['/']);
+  }
 }
