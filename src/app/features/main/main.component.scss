@@ -103,7 +103,6 @@
 //}
 
 
-
 .dark-pattern-guide__step {
   display: grid;
   grid-template-columns: 350px 1fr;
@@ -127,7 +126,6 @@
 }
 
 
-
 .dark-pattern-guide__step__question {
   display: flex;
   align-items: center;
@@ -145,7 +143,7 @@
   margin-top: 125px;
 }
 
-.dark-pattern-guide__step__question p{
+.dark-pattern-guide__step__question p {
   color: #000;
   font-family: "Aeonik Pro", serif;
   font-size: 24px;
@@ -154,4 +152,27 @@
   line-height: normal;
   text-transform: lowercase;
 
+}
+
+@media screen and (max-width: 750px) {
+  .dark-pattern__stats {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+  }
+
+  .dark-pattern__stat:nth-child(1) {
+    margin-top:90px
+  }
+
+  .dark-pattern__stat:nth-child(2) {
+    margin:0
+  }
+
+  .dark-pattern__stat:nth-child(3) {
+    margin:0
+  }
+
+  .dark-pattern-guide__step {
+    grid-template-columns: 1fr;
+  }
 }
