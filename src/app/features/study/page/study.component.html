@@ -11,35 +11,38 @@
 
   <div class="studies__list">
     @for (study of studies(); track study.id) {
-      <div class="studies__card-wrap">
+      <a class="studies__card-wrap" [href]="study.url" target="_blank">
 
         <div class="studies__card">
 
           <div class="studies__image-wrap">
             <img class="studies__image" [src]="images[study.index_image]" alt="">
           </div>
+          <div class="studies__text">
 
-          <div class="studies__info">
-            <p class="studies__author">{{ study.author }}—{{ study.created_year }}</p>
+            <div class="studies__text-wrap">
+              <p class="studies__author">{{ study.author }}—{{ study.created_year }}</p>
 
-            <h2 class="studies__title">{{ study.title }}</h2>
+              <h2 class="h2 studies__title-test">{{ study.title }}</h2>
 
+            </div>
+          </div>
+
+          <div style="max-width: fit-content">
             <div class="studies__original_title">
               <p class="studies__original_title-text">{{ study.original_title }}</p>
             </div>
           </div>
 
-          <div>
-
-
             <div class="studies__line"></div>
 
             <div class="studies__description">
-              <p>{{ study.description }}</p>
+              <p class="paragraph">{{ study.description }}</p>
             </div>
           </div>
-        </div>
-      </div>
+
+
+      </a>
     }
 
   </div>
