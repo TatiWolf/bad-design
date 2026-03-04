@@ -26,7 +26,7 @@
   white-space: nowrap;
   margin-top: 20px;
 
-  >p{
+  > p {
     color: #000;
     font-family: "Aeonik Pro", serif;
     font-size: 15px;
@@ -146,7 +146,9 @@
   align-items: center;
   justify-content: center;
   height: 100%;
-  >h2 {
+  text-align: center;
+
+  > h2 {
     color: #000;
     font-family: "Aeonik Pro", serif;
     font-size: 45px;
@@ -172,5 +174,68 @@
   }
   100% {
     fill: black;
+  }
+}
+
+.video {
+  max-width: 600px;
+  margin-top: 40px;
+}
+
+@media screen and (max-width: 1380px) {
+  .dark-pattern-details__main-mechanics {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .dark-pattern-details__title-wrap {
+    display: grid;
+    gap: 40px;
+    padding-bottom: 50px;
+  }
+  .dark-pattern-details__grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+    //gap: 50px;
+    padding: 50px 0;
+  }
+  .dark-pattern-details__list {
+    //border-bottom: 2px solid #000;
+    //padding-bottom: 50px;
+  }
+  .dark-pattern-details__line {
+    //display: none;
+    height: 2px;
+    width: 100%;
+    margin: 50px 0;
+  }
+
+  .dark-pattern-details__main-mechanics {
+    padding: 50px 0;
+  }
+
+  .dark-pattern-details__list-column {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .video {
+    max-width: 400px;
+  }
+
+  .dark-pattern-details__footer {
+    justify-content: center;
+  }
+
+  .dark-pattern-details__footer__another-pattern {
+    display: none;
+  }
+}
+@media screen and (max-width: 500px) {
+  .video {
+    max-width: 300px;
   }
 }
