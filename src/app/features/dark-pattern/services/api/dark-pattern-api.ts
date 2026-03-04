@@ -24,7 +24,6 @@ export class DarkPatternApi {
       return of(null);
     }
 
-    // REAL API
     return this.http.get<DarkPatternDto[]>(
       `${this.config.apiUrl}/catalogs/${catalog.id}/dark-patterns`
     );

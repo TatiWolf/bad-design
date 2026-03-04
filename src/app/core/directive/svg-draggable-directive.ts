@@ -88,4 +88,5 @@ export class SvgDraggableDirective implements OnInit {
     element.style.cursor = 'grab';
     element.style.zIndex = '1';
   }
+
 }

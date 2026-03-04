@@ -8,6 +8,9 @@
 }
 
 .dark-pattern-details__description-wrap {
+  display: grid;
+  grid-template-rows: 1fr;
+  gap: 20px;
   max-width: 650px;
 }
 
@@ -24,8 +27,12 @@
   margin-top: 20px;
 
   >p{
+    color: #000;
+    font-family: "Aeonik Pro", serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
     text-transform: lowercase;
-
   }
 }
 

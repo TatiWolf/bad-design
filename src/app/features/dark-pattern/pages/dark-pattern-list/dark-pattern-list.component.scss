@@ -44,6 +44,15 @@
   white-space: nowrap;
 }
 
+.dark-pattern-list__dark-pattern__title-another-language p {
+  color: #000;
+  font-family: "Aeonik Pro",serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: lowercase;
+}
+
 .dark-pattern-list__dark-pattern__description {
   padding-left: 40px;
   border-left: 2px solid #000;
@@ -54,4 +63,8 @@
 
 .dark-pattern-list__dark-pattern__title-wrap {
   width: 300px;
+}
+
+@media screen and (max-width: 750px) {
+
 }
