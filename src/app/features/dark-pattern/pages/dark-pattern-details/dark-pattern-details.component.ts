@@ -29,12 +29,12 @@ import {DatePipe, NgOptimizedImage} from '@angular/common';
 export class DarkPatternDetailsComponent implements AfterViewInit {
   private route = inject(ActivatedRoute);
   private darkPatternService = inject(DarkPatternService);
-  @ViewChild('videoPlayer') video!: ElementRef<HTMLVideoElement>;
+  // @ViewChild('videoPlayer') video!: ElementRef<HTMLVideoElement>;
 
   ngAfterViewInit() {
-    setTimeout(() => {
-      this.video.nativeElement.play().catch(() => {});
-    }, 0);
+    // setTimeout(() => {
+      // this.video.nativeElement.play().catch(() => {});
+    // }, 100);
   }
 
 
