@@ -26,6 +26,7 @@
   text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
+  height: calc(100vh - 146px);
 
   & > img {
     display: none;
@@ -36,6 +37,10 @@
   &:active {
     background: #83E100;
   }
+}
+
+.test {
+   writing-mode: sideways-lr;
 }
 
 .side-bar_wrap-element.link__active > img {
