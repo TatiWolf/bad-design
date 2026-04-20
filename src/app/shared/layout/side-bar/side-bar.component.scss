@@ -1,12 +1,51 @@
+@keyframes slide-in {
+  0% {
+    margin-top: 200px;
+    margin-bottom: -150px;
+    transform: rotate(30deg);
+    background: #B6FF51;
+  }
+  50% {
+    margin-top: 0;
+    margin-bottom: 0;
+    transform: rotate(0deg);
+    border-right: rgba(0, 0, 0, 0.5);
+    border-top: rgba(0, 0, 0, 0.7);
+  }
+
+  65% {
+    //margin-top: 50px;
+    //margin-bottom: -25px;
+    transform: rotate(1deg);
+  }
+  //75% {
+  //  //margin-top: 0;
+  //  //margin-bottom: 0;
+  //  transform: rotate(0deg);
+  //}
+  85% {
+    //margin-top: 25px;
+    //transform: rotate(1deg);
+  }
+  100% {
+    //margin-top: 0;
+    //margin-bottom: 0;
+    transform: rotate(0);
+    border-right: rgba(0, 0, 0, 0);
+    border-top: rgba(0, 0, 0, 0);
+  }
+}
+
 .side-bar_wrap {
   display: grid;
   height: 100vh;
   //position: fixed;
   right: 0;
   grid-template-columns: auto auto auto auto auto ;
-  z-index: 1;
-  background: #E8E8E8;
-
+  z-index: 3;
+  background: #E4E4E4;
+  overflow: visible;
+  position: relative;
 }
 
 .side-bar_wrap-element {
@@ -18,6 +57,7 @@
   border-left: 2px solid #000;
   //border-bottom: 2px solid #000;
   color: #000;
+  background: #E8E8E8;
   font-family: "Aeonik Pro", serif;
   font-size: 20px;
   font-style: normal;
@@ -26,6 +66,22 @@
   text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
+
+  &:first-child {
+    animation: slide-in 1.45s ease-out both 0.3s;
+    //position: absolute;
+    //height: 100%;
+    //transform: rotate(10deg);
+    //transform: rotate(30deg);
+
+
+
+    border-right: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    border-top: 1px solid #000000;
+    transform-origin: top center;
+    z-index: 100;
+  }
 
   & > img {
     display: none;

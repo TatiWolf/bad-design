@@ -57,7 +57,7 @@
 .dark-pattern-details__list-element {
   display: grid;
   grid-template-columns: auto auto;
-  align-items: center;
+  //align-items: center;
   gap: 10px;
 }
 
@@ -74,7 +74,8 @@
   width: 11px;
   height: 11px;
   border: 2px solid #000;
-  border-radius: 20px
+  border-radius: 20px;
+  margin-top: 5px;
 }
 
 .dark-pattern-details__grid {
