@@ -73,8 +73,6 @@
   }
 }
 
-
-
 .about__footer__icons {
   margin-bottom: 20px;
   display: flex;
@@ -92,4 +90,39 @@
 .about__footer__logo {
   text-align: center;
   margin-top: 40px;
+}
+
+@media screen and (max-width: 750px) {
+  .about__title__image {
+    width: 53%;
+  }
+  .about__title {
+    flex-direction: column;
+  }
+  .about__why-project {
+    grid-template-columns: 1fr;
+  }
+
+  .about__why-project-info{
+    gap: 20px;
+  }
+  .about__why-project-wrap {
+    padding: 50px 0;
+  }
+
+  .about__research-wrap {
+    padding: 50px 0;
+  }
+  .about__research {
+    grid-template-columns: 1fr;
+  }
+
+  .about__research-info {
+    gap: 20px;
+  }
+
+  .about__footer {
+    display: grid;
+    width: fit-content;
+  }
 }
