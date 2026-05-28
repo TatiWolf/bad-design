@@ -45,25 +45,25 @@
         <p class="paragraph">{{ keyMechanic }}</p>
       }
     </div>
-    <div>
-      <video
-        class="video"
-        #videoPlayer
-        loop
-        muted
-        playsinline
-        controls
-        autoplay
-        preload="auto"
-      >
-        <source [attr.src]="'https://bad-design.ru'+pattern.keyMechanicsVideo" type="video/mp4">
-      </video>
-    </div>
+<!--    <div>-->
+<!--      <video-->
+<!--        class="video"-->
+<!--        #videoPlayer-->
+<!--        loop-->
+<!--        muted-->
+<!--        playsinline-->
+<!--        controls-->
+<!--        autoplay-->
+<!--        preload="auto"-->
+<!--      >-->
+<!--        <source [attr.src]="'https://bad-design.ru'+pattern.keyMechanicsVideo" type="video/mp4">-->
+<!--      </video>-->
+<!--    </div>-->
   </div>
 
   <div class="dark-pattern-details__grid">
     <div class="dark-pattern-details__list">
-      <h3 class="h3_Aeonik-pro">Последствия для пользователя</h3>
+      <h3 class="h3_Aeonik-pro">Последствия для продукта</h3>
       @for (consequenceForTheUser of pattern.consequencesForTheUser; track consequenceForTheUser) {
         <div class="dark-pattern-details__list-element">
           <div class="dark-pattern__stat-circle"></div>
