@@ -1,0 +1,134 @@
+.pattern-list__title-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.pattern-list__description-wrap {
+  max-width: 650px;
+}
+.pattern-impact {
+  //margin-bottom: 125px;
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pattern-line {
+  margin: 80px 0;
+}
+
+.pattern-guide__step__circle {
+  border-radius: 100px;
+  border: 2px solid #000;
+  width: 26px;
+  height: 26px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  color: #000;
+  font-family: "Aeonik Pro", serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: lowercase;
+}
+
+//.pattern-guide__step {
+//  display: flex;
+//  gap: 22px;
+//}
+
+
+.pattern-guide__step {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 40px 0;
+  max-width: 1000px;
+  align-items: start;
+}
+
+.pattern-guide__steps {
+  display: flex;
+  flex-direction: column;
+
+  > .pattern-guide__step {
+    border-bottom: 2px solid #000;
+  }
+
+  > .pattern-guide__step:last-child {
+    border-bottom: none;
+  }
+}
+
+
+.pattern-guide__step__question {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.pattern-guide__step__description {
+  max-width: 590px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pattern-guide {
+  margin-top: 125px;
+}
+
+.pattern-guide__step__question p {
+  color: #000;
+  font-family: "Aeonik Pro", serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: lowercase;
+
+}
+
+@media screen and (max-width: 1300px) {
+  .pattern-list__title-wrap {
+    grid-template-columns:1fr
+  }
+
+
+}
+@media screen and (max-width: 750px) {
+  .dark-pattern__stats {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+  }
+
+  .pattern-guide__step__question p {
+    font-size: 20px;
+  }
+
+  .dark-pattern__stat:nth-child(1) {
+    margin-top:90px
+  }
+
+  .dark-pattern__stat:nth-child(2) {
+    margin:0
+  }
+
+  .dark-pattern__stat:nth-child(3) {
+    margin:0
+  }
+
+  .pattern-guide__step {
+    grid-template-columns: 1fr;
+  }
+}

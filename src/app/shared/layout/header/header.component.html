@@ -1,25 +1,35 @@
 <section class="section-header">
   <div class="container header-container">
-    <a routerLink="/">
+    <a routerLink="/" class="logo-wrap">
       <img
         [ngSrc]="logo"
         alt=""
         width="129"
-        height="43"
+        height="47"
         priority
       >
     </a>
     <div class="header-links">
       <a
         routerLinkActive="link__active"
-        routerLink="/about"
+        routerLink="/mechanisms"
         class="header-link"
-      >о проекте</a>
+      >механизмы</a>
+      <a
+        routerLinkActive="link__active"
+        routerLink="/patterns"
+        class="header-link"
+      >паттерны</a>
       <a
         routerLinkActive="link__active"
         routerLink="/study"
         class="header-link"
       >исследования</a>
+      <a
+        routerLinkActive="link__active"
+        routerLink="/about"
+        class="header-link"
+      >о проекте</a>
     </div>
 
     <img src="icons/burger_icon.svg" class="icon__button burger__icon" alt="" (click)="toggleMenu()">
@@ -28,12 +38,20 @@
 
   <div class="mobile-menu" [class.open]="isOpen">
 
-    <a routerLink="/about" class="header-link-burger-wrap" (click)="closeMenu()">
-      <div class="header-link-burger text-link">о проекте</div>
+    <a routerLink="/mechanisms" class="header-link-burger-wrap" (click)="closeMenu()">
+      <div class="header-link-burger text-link">механизмы</div>
+    </a>
+
+    <a routerLink="/patterns" class="header-link-burger-wrap" (click)="closeMenu()">
+      <div class="header-link-burger text-link">паттерны</div>
     </a>
 
     <a routerLink="/study" class="header-link-burger-wrap" (click)="closeMenu()">
       <div class="header-link-burger text-link">исследования</div>
+    </a>
+
+    <a routerLink="/about" class="header-link-burger-wrap" (click)="closeMenu()">
+      <div class="header-link-burger text-link">о проекте</div>
     </a>
 
     <p class="header-link-burger text-link" style="margin-top: 35px;">Каталог:</p>

@@ -44,7 +44,7 @@ html {
 .header-link {
   color: #000;
   font-family: "Aeonik Pro", serif;
-  font-size: 19px;
+  font-size: clamp(0.875rem, 0.8216rem + 0.2957vw, 1.1875rem);
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -52,7 +52,7 @@ html {
   padding: 0 5px;
   text-decoration: none;
   cursor: pointer;
-
+  width: fit-content;
   &:hover {
     background: #B6FF51;
   }
@@ -64,17 +64,6 @@ html {
 
 .link__active {
   background: #B6FF51;
-}
-
-.header_JetBrains {
-  color: #000;
-  font-family: "JetBrains Mono", monospace;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: -0.6px;
-  text-transform: lowercase;
 }
 
 .title {
@@ -133,6 +122,35 @@ html {
   text-transform: lowercase;
 }
 
+.paragraph-20_jetBrains {
+  color: #121212;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.6px;
+  text-transform: lowercase;
+}
+
+.paragraph-20_Aeonik {
+  color: #121212;
+  font-family: "Aeonik Pro",serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.6px;
+}
+
+.upper-case {
+  text-transform: uppercase;
+}
+
+.bold {
+  font-weight: 500;
+}
+
 .button {
   font-family: "Aeonik Pro", serif;
   font-weight: 400;
@@ -171,6 +189,12 @@ html {
   background: #000000;
 }
 
+.vertical-line {
+  height: 100%;
+  width: 2px;
+  background: #000000;
+}
+
 .icon__button {
   height: 35px;
   width: 35px;
@@ -193,7 +217,7 @@ html {
 }
 
 @media screen and (max-width: 750px) {
-  .header_JetBrains {
+  .paragraph-20_jetBrains {
     font-size: 17px;
   }
 

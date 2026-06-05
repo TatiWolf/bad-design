@@ -1,5 +1,5 @@
 import {ApplicationConfig, provideBrowserGlobalErrorListeners} from '@angular/core';
-import {provideRouter} from '@angular/router';
+import {provideRouter, withInMemoryScrolling} from '@angular/router';
 
 import {routes} from './app.routes';
 import {APP_CONFIG} from './core/config/app-config.token';
@@ -11,7 +11,10 @@ const isProduction = window.location.hostname !== 'localhost';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideRouter(routes),
+    provideRouter(routes,
+      withInMemoryScrolling({
+      scrollPositionRestoration: 'top'
+    })),
     {
       provide: APP_CONFIG,
       useValue: isProduction ? appConfigProd : appConfigDev,

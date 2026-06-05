@@ -1,0 +1,212 @@
+.mechanisms-list__title-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.mechanisms-list__description-wrap {
+  max-width: 650px;
+}
+
+.pattern-line {
+  margin: 80px 0;
+}
+
+.mechanisms-impact {
+  //margin-bottom: 125px;
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mechanisms_system {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  gap: 32px;
+  margin: 100px 0;
+  grid-template-areas: 'left brain right';
+}
+
+.mechanisms_system__item:first-child {
+  grid-area: left;
+}
+
+.mechanisms_system__brain {
+  grid-area: brain;
+}
+
+.mechanisms_system__item:last-child {
+  grid-area: right;
+}
+
+.mechanisms_system__brain img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.mechanisms_system__brain {
+  flex: 0 1 225px;
+}
+
+
+.mechanisms_system__item {
+  flex: 1;
+
+}
+
+.mechanisms_system__item-header {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+
+  > p {
+    color: #000;
+    font-family: "Aeonik Pro",serif;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+}
+
+.mechanisms__grid {
+  margin-top: 80px;
+  margin-bottom: 150px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+
+  grid-template-areas:
+    ". action action ."
+    "trigger loop loop reward"
+    ". investment investment .";
+}
+
+.mechanisms__grid-trigger {
+  grid-area: trigger;
+
+  > div > img {
+    display: none;
+  }
+}
+
+.mechanisms__grid-action {
+  grid-area: action;
+
+  > div > img {
+    display: none;
+  }
+
+  > h2 {
+    text-align: center;
+  }
+}
+
+.mechanisms__grid-reward {
+  grid-area: reward;
+
+  > div > img {
+    display: none;
+  }
+}
+
+
+.mechanisms__grid-loop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: loop;
+
+}
+
+.mechanisms__grid-loop img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  display: block;
+}
+
+.mechanisms__grid-investment {
+  grid-area: investment;
+
+  > div > img {
+    display: none;
+  }
+
+  > h2 {
+    text-align: center;
+  }
+}
+
+.habit-loop-image {
+  position: relative;
+}
+
+.habit-loop-title {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.grid__block-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+  .mechanisms__grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "loop"
+      "trigger"
+      "action"
+      "reward"
+      "investment";
+  }
+  .mechanisms__grid-trigger, .mechanisms__grid-action, .mechanisms__grid-reward, .mechanisms__grid-investment {
+    > div > img {
+      display: block;
+    }
+  }
+
+  .mechanisms__grid-action, .mechanisms__grid-investment {
+    > h2 {
+      text-align: left;
+    }
+  }
+
+  .mechanisms__grid-loop {
+    justify-content: flex-start;
+  }
+
+}
+
+.mechanisms_system__footer {
+  margin-top: 50px;
+}
+
+@media screen and (max-width: 1300px) {
+  .mechanisms-list__title-wrap {
+    grid-template-columns:1fr
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .mechanisms_system {
+    grid-template-areas:
+      "brain"
+      "left"
+      "right";
+    grid-template-columns: 1fr;
+    gap: 80px;
+  }
+}

@@ -12,6 +12,15 @@ export const routes: Routes = [
           import('./features/main/main.component')
             .then(m => m.MainComponent)
       },
+      { path: 'mechanisms', loadComponent: () =>
+          import('./features/mechanisms/mechanisms.component')
+            .then(m => m.MechanismsComponent)
+      },
+      
+      { path: 'patterns', loadComponent: () =>
+          import('./features/patterns/patterns.component')
+            .then(m => m.PatternsComponent)
+      },
 
       { path: 'about', loadComponent: () =>
           import('./features/about/about.component')
