@@ -1,15 +1,12 @@
 import {
-  AfterViewInit,
   ChangeDetectionStrategy,
   Component,
   computed,
-  ElementRef,
   inject,
-  ViewChild,
 } from '@angular/core';
 import {ActivatedRoute, RouterLink} from '@angular/router';
 import {toObservable, toSignal} from '@angular/core/rxjs-interop';
-import {combineLatest, map, of, switchMap} from 'rxjs';
+import {combineLatest, map, of, switchMap, tap} from 'rxjs';
 import {getCatalogById, isCatalogType} from '../models/catalog.type';
 import {DarkPatternService} from '../../services/dark-pattern.service';
 import {DatePipe, NgOptimizedImage} from '@angular/common';
@@ -26,22 +23,20 @@ import {DatePipe, NgOptimizedImage} from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true
 })
-export class DarkPatternDetailsComponent implements AfterViewInit {
+export class DarkPatternDetailsComponent {
   private route = inject(ActivatedRoute);
   private darkPatternService = inject(DarkPatternService);
-  // @ViewChild('videoPlayer') video!: ElementRef<HTMLVideoElement>;
-
-  ngAfterViewInit() {
-    // setTimeout(() => {
-      // this.video.nativeElement.play().catch(() => {});
-    // }, 100);
-  }
 
 
   readonly type = toSignal(
     this.route.paramMap.pipe(
       map(params => params.get('type')),
-      map(raw => isCatalogType(raw) ? raw : null)
+      map(raw => isCatalogType(raw) ? raw : null),
+      tap(() => {
+        document
+          .querySelector('.main__header__router')
+          ?.scrollTo(0, 0);
+      }),
     ),
     { initialValue: null }
   );

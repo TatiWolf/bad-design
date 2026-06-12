@@ -1,8 +1,6 @@
-import {inject, Injectable} from '@angular/core';
-import {catchError, Observable, of} from 'rxjs';
+import { Injectable} from '@angular/core';
+import { Observable, of} from 'rxjs';
 import {CatalogDto} from '../../../features/dark-pattern/pages/models/catalog-dto';
-import {APP_CONFIG} from '../../config/app-config.token';
-import {HttpClient} from '@angular/common/http';
 
 
   @Injectable({
@@ -10,16 +8,61 @@ import {HttpClient} from '@angular/common/http';
 })
 
 export class CatalogApiService {
-  private http: HttpClient = inject(HttpClient)
-  private config = inject(APP_CONFIG);
 
 
   getCatalogs(): Observable<CatalogDto[]> {
-    return this.http.get<CatalogDto[]>(`${this.config.apiUrl}/catalogs`).pipe(
-      catchError(err => {
-        console.error('CatalogModel API error:', err);
-        return of();
-      })
-    )
+    return of([
+      {
+        "id": 1,
+        "title": "Навязчивость",
+        "title_another_language": "Nagging",
+        "slug": "nagging",
+        "descriptions": [
+          "это тип манипулятивных интерфейсов, при котором сервис систематически и повторяющеся побуждает пользователя к одному и тому же действию, игнорируя его предыдущие отказы или попытки отложить решение.",
+          "особенность заключается в том, что действие не принуждается напрямую и не скрывается, а продавливается через повторение, что снижает качество пользовательского опыта, нарушает ощущение контроля и подрывает добровольность принятия решений."
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Препятствия",
+        "title_another_language": "Obstruction",
+        "slug": "obstruction",
+        "descriptions": [
+          "это тип манипулятивных интерфейсов, при котором сервис намеренно усложняет или затягивает выполнение действий, невыгодных для платформы, сохраняя при этом формальную возможность их совершения.",
+          "Ключевая особенность заключается в том, что действие технически доступно, но его выполнение становится настолько неудобным, что решение откладывается или не совершается вовсе."
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Сокрытие",
+        "title_another_language": "Sneaking",
+        "slug": "sneaking",
+        "descriptions": [
+          "это паттерны, в которых интерфейс умышленно делает часть информации менее заметной, скрытой или искажённой, чтобы повлиять на выбор пользователя.",
+          "Манипуляция строится на создании ложного ощущения прозрачности: пользователь думает, что принимает решение на основе полноты данных, хотя на самом деле важные условия остаются скрытыми."
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Манипуляция интерфейсом",
+        "title_another_language": "Interface Interference",
+        "slug": "interface-interference",
+        "descriptions": [
+          "тип манипулятивных паттернов, при котором сервис искажает визуальную и структурную организацию интерфейса, чтобы подтолкнуть пользователя к выгодному для платформы действию.",
+          "особенность заключается в том, что манипуляция происходит на уровне формы, а не содержания."
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Принуждение к действию",
+        "title_another_language": "Forced Action",
+        "slug": "forced-action",
+        "descriptions": [
+          "это тип паттернов, при котором сервис блокирует доступ к функционалу или дальнейшему взаимодействию до тех пор, пока пользователь не выполнит требуемое действие, выгодное платформе.",
+          "пользователь совершает действие не по собственной инициативе, а для устранения блокировки."
+        ]
+      }
+    ])
+
   }
 }
