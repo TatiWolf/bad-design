@@ -49,7 +49,7 @@
 
 .main__title {
   width: 100%;
-  //height: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -326,7 +326,9 @@
   .parent {
     grid-template-columns: 1fr;
   }
-
+  .main__title {
+    height: auto;
+  }
   .main__for-whom-grid {
     display: flex;
     flex-direction: column;
