@@ -42,11 +42,11 @@
 .mobile-menu {
   display: none;
   position: absolute;
-  top: 109px;
+  top: 104px;
   width: 100%;
   height: calc(100% - 107px);
   background: #E8E8E8;
-
+  overflow: auto;
   //transform: translateY(-100%);
   transition: transform 0.3s ease;
 }
