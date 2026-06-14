@@ -313,6 +313,11 @@
 @media screen and (max-width: 500px) {
   .parent {
     grid-template-columns: 1fr;
+  }
+
+  .main__for-whom-grid {
+    display: flex;
+    flex-direction: column;
 
   }
 

@@ -220,7 +220,7 @@ html {
 
 @media screen and (max-width: 999px) {
   .main {
-    display: block;
+    display: block !important;
   }
   .main__side-bar {
     display: none;
