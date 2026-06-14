@@ -39,3 +39,10 @@
   display: none;
 }
 
+@media screen and (max-width: 500px){
+
+  .main__header__router {
+    padding: 45px 15px;
+  }
+
+}

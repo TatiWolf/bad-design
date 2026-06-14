@@ -94,6 +94,14 @@
   .dark-pattern-list__dark-pattern {
     grid-template-columns: 1fr;
     gap: 20px;
+    > .dark-pattern-list__dark-pattern__title-wrap {
+      width: auto;
+      > .dark-pattern-list__dark-pattern__title-another-language {
+        white-space: normal;
+      }
+    }
+
+
   }
   .dividing-line {
     height: 2px;

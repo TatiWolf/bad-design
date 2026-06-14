@@ -23,8 +23,13 @@ export class HeaderComponent {
   logo: string = '/logos/badlogo-header.svg';
   isOpen = false;
 
+
   toggleMenu() {
     this.isOpen = !this.isOpen;
+      document
+        .querySelector('.mobile-menu')
+        ?.scrollTo(0, 0);
+
   }
 
   private darkPatternService = inject(DarkPatternService);
