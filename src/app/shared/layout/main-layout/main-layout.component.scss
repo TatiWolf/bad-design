@@ -28,7 +28,7 @@
   height: calc(100% - 220px);
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 45px;
+  padding: 45px 45px 65px 45px;
   max-width: 1440px;
   margin: 0 auto;
 }
@@ -43,7 +43,7 @@
 @media screen and (max-width: 500px){
 
   .main__header__router {
-    padding: 45px 15px;
+    padding: 45px 15px 65px 15px;
   }
 
 }

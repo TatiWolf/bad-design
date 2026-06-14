@@ -224,6 +224,12 @@
   }
 }
 
+@media screen and (max-width: 999px) {
+  .dark-pattern-details__main-mechanics__text {
+    width: auto;
+  }
+}
+
 @media screen and (max-width: 750px) {
   .video {
     max-width: 400px;
